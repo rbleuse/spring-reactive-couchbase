@@ -1,0 +1,27 @@
+spring:
+  couchbase:
+    connection-string: couchbase://127.0.0.1
+    username: admin
+    password: password
+  data:
+    couchbase:
+      bucket-name: test
+  main:
+    allow-bean-definition-overriding: true
+
+management:
+  health:
+    couchbase:
+      enabled: true
+  group:
+    custom:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: info,health,couchbase
+
+logging:
+  level:
+    org.springframework.data.couchbase.core: DEBUG
+    org.springframework.data.couchbase.repository: DEBUG
