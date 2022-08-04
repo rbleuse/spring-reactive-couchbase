@@ -17,7 +17,7 @@ data class Schedule(
     val nested: Nested,
 
     @field:Field
-    val list: Array<String>
+    val list: List<String>
 )
 
 data class Nested(
