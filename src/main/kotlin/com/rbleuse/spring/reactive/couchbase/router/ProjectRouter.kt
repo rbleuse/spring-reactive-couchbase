@@ -39,6 +39,8 @@ class ProjectRouter(
 
             // schedule
             .andRoute(RequestPredicates.POST("/schedule"), scheduleHandler::createSchedule)
+            .andRoute(RequestPredicates.GET("/schedule"), scheduleHandler::findAllN1ql)
+            .andRoute(RequestPredicates.GET("/schedule/custom"), scheduleHandler::findAllN1qlCustom)
 
             // test
             .andRoute(RequestPredicates.GET("/test"), testHandler::createTest)

@@ -18,6 +18,10 @@ class ScheduleService(
 
     fun saveScheduleWithRepo(schedule: Schedule) = repository.save(schedule)
 
+    fun findByN1ql() = repository.findByN1ql()
+
+    fun findByN1qlCustom() = repository.findByN1qlCustom()
+
     @Transactional
     fun saveScheduleWithTransaction(schedule: Schedule): Mono<Schedule> {
         Exception(Thread.currentThread().name).printStackTrace()

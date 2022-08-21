@@ -30,4 +30,18 @@ class ScheduleHandler(
          ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).bodyValue(it)
          }*/
     }
+
+    fun findAllN1ql(serverRequest: ServerRequest): Mono<ServerResponse> {
+        return service.findByN1ql().collectList()
+            .flatMap {
+                ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).bodyValue(it)
+            }
+    }
+
+    fun findAllN1qlCustom(serverRequest: ServerRequest): Mono<ServerResponse> {
+        return service.findByN1qlCustom().collectList()
+            .flatMap {
+                ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).bodyValue(it)
+            }
+    }
 }
