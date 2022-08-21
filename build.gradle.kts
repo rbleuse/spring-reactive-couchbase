@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.7.3-SNAPSHOT"
+    id("org.springframework.boot") version "2.7.3"
     id("io.spring.dependency-management") version "1.0.12.RELEASE"
     kotlin("jvm") version "1.7.20-Beta"
     kotlin("plugin.spring") version "1.7.20-Beta"
@@ -20,8 +20,6 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-couchbase-reactive")
-    implementation("org.springframework.data:spring-data-couchbase:4.4.3-SNAPSHOT")
-    // implementation("com.couchbase.client:couchbase-transactions:1.2.4")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
