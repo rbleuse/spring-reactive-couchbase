@@ -15,5 +15,8 @@ data class Person(
     val id: String,
 
     @field:Field
-    val name: String
+    val firstName: String,
+
+    @field:Field
+    val lastName: String
 )

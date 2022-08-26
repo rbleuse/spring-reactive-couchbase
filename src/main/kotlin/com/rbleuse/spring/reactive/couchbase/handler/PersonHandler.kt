@@ -15,7 +15,7 @@ class PersonHandler(
 
     fun createPerson(serverRequest: ServerRequest): Mono<ServerResponse> {
         val name = "test"
-        val test = Person("hello", name)
+        val test = Person("hello", name, name)
 
         return service.createPerson(test)
             .then(

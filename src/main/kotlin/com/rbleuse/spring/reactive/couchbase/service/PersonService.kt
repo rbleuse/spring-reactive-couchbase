@@ -10,5 +10,5 @@ class PersonService(
 ) {
 
     fun createPerson(person: Person) = repository.save(person)
-    fun getProjectionByName(name: String) = repository.findByName(name)
+    fun getProjectionByName(name: String) = repository.findByFirstName(name)
 }
