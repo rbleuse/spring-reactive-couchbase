@@ -8,6 +8,6 @@ import reactor.core.publisher.Flux
 
 interface PersonRepository : ReactiveCouchbaseRepository<Person, String> {
 
-    @Query("select p.firstName, p.lastName from #{#n1ql.bucket} p WHERE p.firstName = '#{[0]}'")
+    @Query("select p.firstName, p.lastName, '' as __id from #{#n1ql.bucket} p WHERE p.firstName = $1")
     fun findByFirstName(firstName: String): Flux<PersonName>
 }
